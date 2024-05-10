@@ -15,7 +15,7 @@
   "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
-      "matches": ["https://www.8591.com.tw/v3/mall/list*", "https://www.8591.com.tw/mall/list*", "https://www.8591.com.hk/v3/mall/list*", "https://www.8591.com.hk/mall/list*"],
+      "matches": ["https://www.8591.com.tw/v3/mall/list*", "https://www.8591.com.tw/mall/list*"],
       "js": ["execute.js"]
     }
   ]
