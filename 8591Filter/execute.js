@@ -23,14 +23,11 @@ document.addEventListener('mousedown', function(event) {
 // Main方法
 async function main() {
     console.log("開始過濾");
-    var blacklist;
     // 從 Chrome 儲存中取得資料
-    let { reviewFilter } = await chrome.storage.sync.get(['reviewFilter']);
-    if (reviewFilter === undefined) {
-        reviewFilter = "";
+    let { listUser : blacklist } = await chrome.storage.sync.get(['listUser']);
+    if (!blacklist || blacklist.length === 0) {
+        blacklist = [];
     }
-    // 從結果中取得 reviewFilter 的值
-    var blacklist = reviewFilter.trim().split('\n');
 
     showBlackUser(); //先將黑名單隱藏的用戶顯示 以免畫面重用混淆
     var count = hideBlackUser(blacklist); //隱藏黑名單用戶
