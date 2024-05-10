@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "85賣場過濾工具",
+  "description": "過濾85賣場插件 BY : TheHon",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.8591.com.tw/v3/mall/list*"],
+      "js": ["execute.js"]
+    }
+  ]
+}
